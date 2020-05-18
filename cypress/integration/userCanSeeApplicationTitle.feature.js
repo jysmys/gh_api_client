@@ -11,7 +11,7 @@ describe("Application main view", () => {
     cy.wait(1000);
     cy.get("button#search-button").click();
     cy.get("#search-items").within(() => {
-      cy.get("#CraftAcademy").should("contain", "CraftAcadamy");
+      cy.get("ul#faraznaeem").should("contain", "faraznaeem");
     });
   });
 });
