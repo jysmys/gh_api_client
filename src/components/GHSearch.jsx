@@ -1,16 +1,29 @@
 import React from "react";
-import { Button, Input } from "semantic-ui-react";
+import { Button, Input, Container } from "semantic-ui-react";
 
-const GHSearch = () => {
+const GHSearch = ({ getSearch, onChangeHandler }) => {
   return (
     <>
-      <Input
-        id="search-input"
-        type="text"
-        name="search"
-        placeholder="Input GH username"
-      />
-      <Button id="search-button" name="search">Search</Button>
+      <Container>
+        <Input
+          id="search-input"
+          type="text"
+          name="search"
+          placeholder="Input GH username"
+          onChange={(e) => {
+            onChangeHandler(e);
+          }}
+        />
+        <Button
+          id="search-button"
+          name="search"
+          onClick={() => {
+            getSearch();
+          }}
+        >
+          Search
+        </Button>
+      </Container>
     </>
   );
 };
